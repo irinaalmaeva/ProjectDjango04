@@ -9,10 +9,10 @@
     <h2>Список фильмов</h2>
     <ul>
         {% for film in films %}
-            <li><strong>{{ film.title }}</strong><br>
+            <li><strong>{{ film.title }}</strong>
                 <strong>Description:</strong> {{ film.description }}<br>
                 <strong>Review:</strong> {{ film.review }}
-            </li><br>
+            </li>
         {% empty %}
             <li>No films yet.</li>
         {% endfor %}
