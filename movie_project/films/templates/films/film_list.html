@@ -1,21 +1,42 @@
-<!-- films/templates/films/film_list.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Films List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список фильмов</title>
+    <!-- Подключение Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h2>Список фильмов</h2>
-    <ul>
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Список фильмов</h2>
+
+    <div class="row">
         {% for film in films %}
-            <li><strong>{{ film.title }}</strong>
-                <strong>Description:</strong> {{ film.description }}<br>
-                <strong>Review:</strong> {{ film.review }}
-            </li>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ film.title }}</h5>
+                        <p class="card-text"><strong>Описание:</strong> {{ film.description }}</p>
+                        <p class="card-text"><strong>Отзыв:</strong> {{ film.review }}</p>
+                    </div>
+                </div>
+            </div>
         {% empty %}
-            <li>No films yet.</li>
+            <div class="col-12">
+                <div class="alert alert-info text-center" role="alert">
+                    Фильмов пока нет.
+                </div>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
+</div>
+
+<!-- Подключение Bootstrap JavaScript (необязательно, но нужно для интерактивных элементов) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+
