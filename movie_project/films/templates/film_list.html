@@ -1,0 +1,21 @@
+<!-- films/templates/films/film_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Films List</title>
+</head>
+<body>
+    <h2>Список фильмов</h2>
+    <ul>
+        {% for film in films %}
+            <li><strong>{{ film.title }}</strong><br>
+                <strong>Description:</strong> {{ film.description }}<br>
+                <strong>Review:</strong> {{ film.review }}
+            </li><br>
+        {% empty %}
+            <li>No films yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
